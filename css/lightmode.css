@@ -148,7 +148,7 @@ body {
 .card {
   background: white;
   color: black;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.5), 0 24px 80px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Mulish', sans-serif;
   padding: 10px 20px;
   margin: 0 auto;

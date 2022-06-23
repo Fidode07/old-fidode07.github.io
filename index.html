@@ -11,19 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="img/profilepic.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="img/profilepic.ico" />
     <style>
+      .card {
+        border-radius: 30px;
+      }
+
+      .background {
+        filter: blur(3px) brightness(40%);
+        transform: scale(1.1);
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        z-index: -1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
 
     </style>
     <script>
       var dark = useDarkmode();
       var first_state;
-      
+
       if(screen.width >= 1600) {
-        first_state = "pc"; 
+        first_state = "pc";
       } else {
-        first_state = "other"; 
+        first_state = "other";
       }
 
       if(dark) {
@@ -34,7 +50,7 @@
 
      $( window ).resize(function() {
        if(first_state == "pc") {
-        load_container(get_current_container().id); 
+        load_container(get_current_container().id);
        }
      });
 
@@ -45,6 +61,12 @@
     </script>
   </head>
   <body>
+    <div class="background">
+      <img src="img/bg.png" style="    flex-shrink: 0;
+          min-width: 100%;
+          min-height: 100%"/>
+    </div>
+
     <header class="header1">
       <div class="icon-container">
         <a href="https://github.com/Fidode07" target="_blank">
@@ -121,9 +143,11 @@
         <h1 style="font-family: 'Roboto Condensed', sans-serif;">Unpublished projects</h1>
           <br>
         <div class="card engine1 eff">
-          <h1>AnyWallpaper</h1>
-          <h4>Maybe WallpaperEngine means something to you. The well-known engine on Steam. Well, I made it my goal to program and release it myself.
-            I'm also almost done, but want to make it available for Linux as well (Which is a lot of work). Stay excited!</h4>
+          <div class="card-content">
+            <h1>AnyWallpaper</h1>
+            <h4>Maybe WallpaperEngine means something to you. The well-known engine on Steam. Well, I made it my goal to program and release it myself.
+              I'm also almost done, but want to make it available for Linux as well (Which is a lot of work). Stay excited!</h4>
+          </div>
         </div>
     </div>
 
