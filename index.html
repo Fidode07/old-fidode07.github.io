@@ -18,6 +18,13 @@
     </style>
     <script>
       var dark = useDarkmode();
+      var first_state;
+      
+      if(screen.width >= 1600) {
+        first_state = "pc"; 
+      } else {
+        first_state = "other"; 
+      }
 
       if(dark) {
         load_css_file("css/darkmode.css");
@@ -26,7 +33,9 @@
       }
 
      $( window ).resize(function() {
-       load_container(get_current_container().id);
+       if(first_state == "pc") {
+        load_container(get_current_container().id); 
+       }
      });
 
       $(document).ready(function() {
