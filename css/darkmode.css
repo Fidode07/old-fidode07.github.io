@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  vertical-align: baseline;
+  overflow-wrap: break-word;
+}
+
+body {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.5),
+         rgba(0, 0, 0, 0.5)
+       ),
+       /* bottom, image */
+       url('../img/bg.png');
+   background-size: cover;
+   color: white;
+   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1159px) {
+  .header1 {
+    display: none;
+  }
+
+  .header2 {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    left: 0;
+    top: 0;
+    position: fixed;
+    padding: 10px 20px;
+    vertical-align: baseline;
+    overflow-wrap: break-word;
+  }
+
+  .ico2 {
+    float: right;
+    text-align: right;
+    border-radius: 50%;
+    right: 0;
+    width: 37px;
+
+  }
+
+  .header2 .hamburger {
+    float: left;
+    font-size: 34px;
+    vertical-align: baseline;
+    overflow-wrap: break-word;
+    z-index: 999999;
+  }
+
+  .header2 .icon-list {
+    margin-left: 6%;
+    vertical-align: baseline;
+    padding: 2px 4px;
+  }
+
+  .header-menu {
+    background: rgba(40, 40, 40, 0.85);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .content-side {
+    z-index: 999;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1160px) {
+  .header1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    padding: 8px 18px;
+    color: white;
+    text-align: left;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+  }
+
+  .header2 {
+    display: none;
+  }
+
+  .eff:hover {
+    filter: brightness(70%) blur(0.5px) grayscale(30%);
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .eff {
+    transition: .2s;
+  }
+
+  .item:hover {
+    color: #0B64CA;
+    transition: .2s;
+    cursor: pointer;
+  }
+
+  .content-side {
+    z-index: 999;
+    float: left;
+    margin-left: 18%;
+    width: 81%;
+  }
+}
+
+.item {
+  letter-spacing: 2px;
+}
+
+.icon-list {
+  margin-left: 4%;
+}
+
+.icon-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon {
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  width: 50%;
+  padding: 20px 0px;
+}
+
+.card {
+  background: white;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Mulish', sans-serif;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.mcai {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+       url('https://raw.githubusercontent.com/Fidode07/MinecraftToAIConverter/main/IMAGES/2022-05-13_17.04.08.png');
+   background-size: cover;
+   color: white;
+}
+
+.toanime {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+       url('https://raw.githubusercontent.com/Fidode07/ToAnimeConverter/main/images/monkey_facepaint1.jpg');
+   background-size: cover;
+   color: white;
+}
+
+.gitpage {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+       url('../img/gitpage.png');
+   background-size: cover;
+   color: white;
+}
+
+.engine1 {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+       url('../img/anywallpaper.png');
+   background-size: cover;
+   color: white;
+}
+
+.dc {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+      rgba(112, 124, 196, 0.7);
+  color: white;
+}
+
+.mail {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+      rgba(252, 195, 18, 0.7);
+  color: white;
+}
+
+.me {
+  background:
+       /* top, transparent black, faked with gradient */
+       linear-gradient(
+         rgba(0, 0, 0, 0.6),
+         rgba(0, 0, 0, 0.6)
+       ),
+       /* bottom, image */
+      url('../img/profilepic.png');
+        background-size: cover;
+  color: white;
+}
