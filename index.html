@@ -25,11 +25,9 @@
         load_css_file("css/lightmode.css");
       }
 
-      function resizeHandler() {
-        load_container(get_current_container().id);
-      }
-
-      window.onresize = resizeHandler;
+     $( window ).resize(function() {
+       load_container(get_current_container().id);
+     });
 
       $(document).ready(function() {
         document.getElementById("ageinfo").innerHTML = "Hmm, let me think. There is not much about me. I am "+get_age()+" years old, my name is Lukas, I live in Munich and I know the following programming languages";
