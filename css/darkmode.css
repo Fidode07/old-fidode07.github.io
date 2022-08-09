@@ -15,6 +15,7 @@ body {
   }
 
   .header2 {
+    font-family: 'Roboto Condensed', sans-serif;
     display: flex;
     position: fixed;
     width: 100%;
