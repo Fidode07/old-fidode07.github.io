@@ -33,33 +33,6 @@
       }
 
     </style>
-    <script>
-      var dark = useDarkmode();
-      var first_state;
-
-      if(screen.width >= 1600) {
-        first_state = "pc";
-      } else {
-        first_state = "other";
-      }
-
-      if(dark) {
-        load_css_file("css/darkmode.css");
-      } else {
-        load_css_file("css/lightmode.css");
-      }
-
-     $( window ).resize(function() {
-       if(first_state == "pc") {
-        load_container(get_current_container().id);
-       }
-     });
-
-      $(document).ready(function() {
-        document.getElementById("ageinfo").innerHTML = "Hmm, let me think. There is not much about me. I am "+get_age()+" years old, my name is Lukas, I live in Munich and I know the following programming languages";
-      });
-
-    </script>
   </head>
   <body>
     <div class="background">
@@ -193,6 +166,32 @@
         </div>
 
     </div>
+<script>
+      var dark = useDarkmode();
+      var first_state;
 
+      if(screen.width >= 1600) {
+        first_state = "pc";
+      } else {
+        first_state = "other";
+      }
+
+      if(dark) {
+        load_css_file("css/darkmode.css");
+      } else {
+        load_css_file("css/lightmode.css");
+      }
+
+     $( window ).resize(function() {
+       if(first_state == "pc") {
+        load_container(get_current_container().id);
+       }
+     });
+
+      $(document).ready(function() {
+        document.getElementById("ageinfo").innerHTML = "Hmm, let me think. There is not much about me. I am "+get_age()+" years old, my name is Lukas, I live in Munich and I know the following programming languages";
+      });
+
+    </script>
   </body>
 </html>
