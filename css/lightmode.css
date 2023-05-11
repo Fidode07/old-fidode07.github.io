@@ -69,7 +69,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 1160px) {
+@media only screen and (min-width: 1159px) {
     .header1 {
         font-family: 'Roboto Condensed', sans-serif;
         background: rgba(220, 220, 220, .85);

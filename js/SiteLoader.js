@@ -13,7 +13,6 @@ const neededScripts = {
 
         document.getElementById("ageinfo").innerHTML = "Hmm, let me think. There is not much about me. I am " + get_age() + " years old, my name is Lukas, I live in Munich and I know the following programming languages:";
     }],
-    'https://code.jquery.com/jquery-3.6.0.min.js': ['text/javascript', null],
     'https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Quicksand:wght@300;400;500;554;600;700&family=Roboto+Condensed&display=swap': ['text/css', null],
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css': ['text/css', null],
     'css/main.css': ['text/css', null]

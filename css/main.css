@@ -17,11 +17,23 @@
     box-shadow: 0 0 10px #719ECE;
 }
 
-@media only screen and (min-width: 1160px) {
+@media only screen and (min-width: 1159px) {
     .content-side {
         z-index: 999;
         float: left;
         margin-left: 18% !important;
         width: 81%;
+    }
+}
+
+@media only screen and (max-width: 1159px) {
+    .content-side {
+        margin-top: 5% !important;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .content-side {
+        margin-top: 7vh !important;
     }
 }
