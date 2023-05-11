@@ -45,7 +45,7 @@ function get_current_container() {
 
 function toggle_header2() {
   var tg = document.getElementById("header2");
-  if(tg.style.display == "none") {
+  if(tg.style.display === "none") {
     tg.style.display = "";
     $("#header2").animate({
       'margin-left': '0px'

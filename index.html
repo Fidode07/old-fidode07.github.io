@@ -1,197 +1,236 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="description" content="This is my Portfolio. It shows my Projects, Skills and more.">
     <title>Portfolio of Fido_de07</title>
-    <script async src="js/Assets.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Quicksand:wght@300;400;500;554;600;700&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="shortcut icon" type="image/png" href="img/icon1.png">
+    <link rel="shortcut icon" type="image/png" href="img/icon1.png">
+    <meta name="description"
+          content="This is the Portfolio of Fido_de07. You can find all information (Skills, Projects, ...) about me here.">
+    <meta name="keywords" content="Fido_de07, Fido, de07, Fidode07, Lukas, Satori">
     <style>
-      .card {
-        border-radius: 30px;
-      }
+        #spinner {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-      .background {
-        filter: blur(3px) brightness(40%);
-        transform: scale(1.1);
-        position: fixed;
-        width: 100%;
-        left: 0;
-        top: 0;
-        object-fit: cover;
-        z-index: -1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
+        :root {
+            --spinner-color: #2669c5;
+        }
 
+        #spinner:after {
+            content: " ";
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 4px solid var(--spinner-color);
+            border-color: var(--spinner-color) var(--spinner-color) var(--spinner-color) transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+            z-index: 1000;
+        }
+
+        #spinner-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1e21;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="background">
-      <img src="img/bg.png" style="    flex-shrink: 0;
+    <style>
+        .card {
+            border-radius: 30px;
+        }
+
+        .background {
+            filter: blur(3px) brightness(40%);
+            transform: scale(1.1);
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            z-index: -1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<span id="spinner-overlay">
+    <span id="spinner"></span>
+</span>
+
+<div class="background">
+    <img src="img/bg.png" style="    flex-shrink: 0;
           min-width: 100%;
           min-height: 100%"/>
-    </div>
+</div>
 
-    <header class="header1">
+<header class="header1">
     <div class="icon-container">
         <a href="https://github.com/Fidode07" target="_blank">
-          <img src="img/profilepic.png" class="icon">
+            <img src="img/profilepic.png" class="icon">
         </a>
-      </div>
-        
-      <div class="icon-list">
-          <strong class="item" onClick="load_container('home');"><h3><i class="fa-solid fa-house"></i> Home</h3></strong>
-          <h3 class="item" onClick="load_container('projects');"><i class="fa-solid fa-folder-open"></i> Projects</h3>
-          <h3 class="item" onClick="load_container('about-me');"><i class="fa-solid fa-person-circle-question"></i> About me</h3>
-          <h3 class="item" onClick="load_container('contact-me');"><i class="fa-solid fa-address-book"></i> Contact Me</h3>
-      </div>
-      <p style="color: grey; position: absolute; font-size: 15px; bottom: 0; left: 0; margin-left: 2%;">&copy; Made by Fido_de07</p>
-    </header>
-
-    <header class="header2">
-      <i class="fa-solid fa-bars hamburger" onClick="toggle_header2();"></i>
-      <a href="https://github.com/Fidode07" style=" width: 80%;" target="_blank">
-        <img src="img/profilepic.png" class="ico2"/>
-      </a>
-      <div class="header-menu" id="header2" style="display: none;">
-          <br>
-          <br><br>
-          <hr>
-          <div class="icon-list">
-              <strong class="item" onClick="load_container('home'); toggle_header2();"><h3><i class="fa-solid fa-house"></i> Home</h3></strong>
-              <h3 class="item" onClick="load_container('projects'); toggle_header2();"><i class="fa-solid fa-folder-open"></i> Projects</h3>
-              <h3 class="item" onClick="load_container('about-me'); toggle_header2();"><i class="fa-solid fa-person-circle-question"></i> About me</h3>
-              <h3 class="item" onClicK="load_container('contact-me'); toggle_header2();"><i class="fa-solid fa-address-book"></i> Contact Me</h3>
-          </div>
-      </div>
-    </header>
-
-    <div id="home" class="content-side">
-      <br><br><br>
-      <div class="card" style="background: rgba(255, 255, 255, 0.8);">
-        <h1>What's the goal of this page<i class="fa-solid fa-question"></i></h1>
-        <h4>That's a good question. Well, actually this is about gathering my projects, resume, etc. in one place. What for? Well, for applications, my ego and because I'm bored.</h4>
-      </div>
     </div>
 
-    <div id="projects" class="content-side" style="display: none;">
-        <br><br><br>
-        <a href="https://github.com/Fidode07/MinecraftToAIConverter" target="_blank">
-          <div class="card mcai eff">
-            <h1>MinecraftToAIConverter</h1>
-            <h4>The project is pretty simple. It's about bringing artificial intelligence into Minecraft (server). The creatures in the game are much too boring and simple, but with
-              artificial intelligence you can give the creatures a new meaning. Therefore, I have developed a Chatbot AI, which classifies sentences and sends answers.</h4>
-          </div>
-        </a>
+    <div class="icon-list">
+        <strong class="item" onClick="load_container('home');"><h3><i class="fa-solid fa-house"></i> Home</h3></strong>
+        <h3 class="item" onClick="load_container('projects');"><i class="fa-solid fa-folder-open"></i> Projects</h3>
+        <h3 class="item" onClick="load_container('about-me');"><i class="fa-solid fa-person-circle-question"></i> About
+            me</h3>
+        <h3 class="item" onClick="load_container('contact-me');"><i class="fa-solid fa-address-book"></i> Contact Me
+        </h3>
+    </div>
+    <p style="color: grey; position: absolute; font-size: 15px; bottom: 0; left: 0; margin-left: 2%;">&copy; Made by
+        Fido_de07</p>
+</header>
 
-          <br>
-
-        <a href="https://github.com/Fidode07/ToAnimeConverter" target="_blank">
-          <div class="card toanime eff">
-            <h1>ToAnimeConverter</h1>
-            <h4>The project is based on another GAN, which is not mine. However, the setups etc. for something like this are always very complicated, so I thought I'd make a
-              GUI (graphical user interface) so that the others can use it easier and better. To explain it simply, with the program you can convert images and videos into a comic/anime style.
-               (p.s. the Discord name in the picture is outdated. The hashtag is the same, but the name is now Fido_de07).</h4>
-          </div>
-        </a>
-
-          <br>
-
-        <a href="https://github.com/Fidode07/fidode07.github.io" target="_blank">
-          <div class="card gitpage eff">
-            <h1>fidode07.github.io</h1>
-            <h4>This "project" is pretty self-explanatory. This is the page you just landed on. The great thing here? The page is full of information about me ... Google knows too much!</h4>
-          </div>
-        </a>
-      
-           <br>
-
-        <a href="https://github.com/Fidode07/AnyWallpapers" target="_blank">
-          <div class="card engine1 eff">
-            <h1>AnyWallpapers - Python</h1>
-            <h4>This app allows you to use videos and GIFs as backgrounds, giving your desktop a new life.</h4>
-          </div>
-      </a>
-
-          <br><br>
-
-        <h1 style="font-family: 'Roboto Condensed', sans-serif;">Unpublished projects</h1>
-          <br>
-        <div class="card engine1 eff">
-          <div class="card-content">
-            <h1>AnyWallpapers - C#</h1>
-            <h4>This is the C# version of AnyWallpapers. This will probably not be free and open source, but it will be uploaded to Steam.</h4>
-          </div>
+<header class="header2">
+    <i class="fa-solid fa-bars hamburger" onClick="toggle_header2();"></i>
+    <a href="https://github.com/Fidode07" style=" width: 80%;" target="_blank">
+        <img src="img/profilepic.png" class="ico2"/>
+    </a>
+    <div class="header-menu" id="header2" style="display: none;">
+        <br>
+        <br><br>
+        <hr>
+        <div class="icon-list">
+            <strong class="item" onClick="load_container('home'); toggle_header2();"><h3><i
+                    class="fa-solid fa-house"></i> Home</h3></strong>
+            <h3 class="item" onClick="load_container('projects'); toggle_header2();"><i
+                    class="fa-solid fa-folder-open"></i> Projects</h3>
+            <h3 class="item" onClick="load_container('about-me'); toggle_header2();"><i
+                    class="fa-solid fa-person-circle-question"></i> About me</h3>
+            <h3 class="item" onClicK="load_container('contact-me'); toggle_header2();"><i
+                    class="fa-solid fa-address-book"></i> Contact Me</h3>
         </div>
     </div>
+</header>
 
-    <div id="about-me" class="content-side" style="display: none;">
-      <br><br><br>
-      <div class="card me">
-          <h1>About Me</h1>
-          <h4 id="ageinfo"></h4>
-          <ul style="margin-left: 4%;">
+<div id="home" class="content-side">
+    <br><br><br>
+    <div class="card" style="background: rgba(255, 255, 255, 0.8);">
+        <h1>What's the goal of this page<i class="fa-solid fa-question"></i></h1>
+        <h4>That's a good question. Well, actually this is about gathering my projects, resume, etc. in one place. What
+            for? Well, for applications, my ego and because I'm bored.</h4>
+    </div>
+</div>
+
+<div id="projects" class="content-side" style="display: none;">
+    <br><br><br>
+    <a href="https://github.com/Fidode07/MinecraftToAIConverter" target="_blank">
+        <div class="card mcai eff">
+            <h1>MinecraftToAIConverter</h1>
+            <h4>The project is pretty simple. It's about bringing artificial intelligence into Minecraft (server). The
+                creatures in the game are much too boring and simple, but with
+                artificial intelligence you can give the creatures a new meaning. Therefore, I have developed a Chatbot
+                AI, which classifies sentences and sends answers.</h4>
+        </div>
+    </a>
+
+    <br>
+
+    <a href="https://github.com/Fidode07/ToAnimeConverter" target="_blank">
+        <div class="card toanime eff">
+            <h1>ToAnimeConverter</h1>
+            <h4>The project is based on another GAN, which is not mine. However, the setups etc. for something like this
+                are always very complicated, so I thought I'd make a
+                GUI (graphical user interface) so that the others can use it easier and better. To explain it simply,
+                with the program you can convert images and videos into a comic/anime style.
+                (p.s. the Discord name in the picture is outdated. The hashtag is the same, but the name is now
+                Fido_de07).</h4>
+        </div>
+    </a>
+
+    <br>
+
+    <a href="https://github.com/Fidode07/fidode07.github.io" target="_blank">
+        <div class="card gitpage eff">
+            <h1>fidode07.github.io</h1>
+            <h4>This "project" is pretty self-explanatory. This is the page you just landed on. The great thing here?
+                The page is full of information about me ... Google knows too much!</h4>
+        </div>
+    </a>
+
+    <br>
+
+    <a href="https://github.com/Fidode07/AnyWallpapers" target="_blank">
+        <div class="card engine1 eff">
+            <h1>AnyWallpapers - Python</h1>
+            <h4>This app allows you to use videos and GIFs as backgrounds, giving your desktop a new life.</h4>
+        </div>
+    </a>
+
+    <br><br>
+
+    <h1 style="font-family: 'Roboto Condensed', sans-serif;">Unpublished projects</h1>
+    <br>
+    <div class="card engine1 eff">
+        <div class="card-content">
+            <h1>AnyWallpapers - C#</h1>
+            <h4>This is the C# version of AnyWallpapers. This will probably not be free and open source, but it will be
+                uploaded to Steam.</h4>
+        </div>
+    </div>
+    <br><br>
+</div>
+
+<div id="about-me" class="content-side" style="display: none;">
+    <br><br><br>
+    <div class="card me">
+        <h1>About Me</h1>
+        <h4 id="ageinfo"></h4>
+        <ul style="margin-left: 4%;">
             <li>Python</li>
             <li>JavaScript</li>
             <li>Java</li>
             <li>PHP</li>
             <li>Web Development (HTML, CSS)</li>
             <li>C#</li>
-          </ul>
-          <h4>Mainly I do automatization, GUIs and tools. I actually program everything that looks interesting.</h4>
-      </div>
+        </ul>
+        <h4>Mainly I do automatization, GUIs and tools. I actually program everything that looks interesting.</h4>
     </div>
+</div>
 
-    <div id="contact-me" class="content-side" style="display: none;">
-        <br><br><br>
-        <div class="card dc">
-          <h1>My Discord</h1>
-          <h4>I'm guessing Discord tells you what? Don't worry, I won't drag you onto a server here. This is my account: Fido_de07#9227</h4>
-        </div>
-          <br>
-        <div class="card mail">
-          <h1>E-Mail</h1>
-          <h4>Wait ... WHAT? Well, I'm not an old person, so I don't check my email DAILY (It's the worst way to reach me). However, it is also one of the ways.
+<div id="contact-me" class="content-side" style="display: none;">
+    <br><br><br>
+    <div class="card dc">
+        <h1>My Discord</h1>
+        <h4>I'm guessing Discord tells you what? Don't worry, I won't drag you onto a server here. This is my account:
+            Fido_de07#9227</h4>
+    </div>
+    <br>
+    <div class="card mail">
+        <h1>E-Mail</h1>
+        <h4>Wait ... WHAT? Well, I'm not an old person, so I don't check my email DAILY (It's the worst way to reach
+            me). However, it is also one of the ways.
             <br><br>Mail: <a href="mailto:mymainhelper@gmail.com" style="text-decoration: underline; color: #4747E0;">mymainhelper@gmail.com</a>
-          </h4>
-        </div>
-
+        </h4>
     </div>
-<script async>
-      var dark = useDarkmode();
-      var first_state;
-
-      if(screen.width >= 1600) {
-        first_state = "pc";
-      } else {
-        first_state = "other";
-      }
-
-      if(dark) {
-        load_css_file("css/darkmode.css");
-      } else {
-        load_css_file("css/lightmode.css");
-      }
-
-     $( window ).resize(function() {
-       if(first_state == "pc") {
-        load_container(get_current_container().id);
-       }
-     });
-
-      $(document).ready(function() {
-        document.getElementById("ageinfo").innerHTML = "Hmm, let me think. There is not much about me. I am "+get_age()+" years old, my name is Lukas, I live in Munich and I know the following programming languages";
-      });
-
-    </script>
-  </body>
+</div>
+<script src="js/SiteLoader.js" async></script>
+</body>
 </html>

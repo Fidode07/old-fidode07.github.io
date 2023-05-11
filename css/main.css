@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+    width: 10px;
+    background: #1a1e21;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1e21;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #393a3f;
+    border-radius: 10px;
+}
+
+.eff {
+    /* Add glow effect to box */
+    box-shadow: 0 0 10px #719ECE;
+}
+
+@media only screen and (min-width: 1160px) {
+    .content-side {
+        z-index: 999;
+        float: left;
+        margin-left: 18% !important;
+        width: 81%;
+    }
+}
