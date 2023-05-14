@@ -173,7 +173,7 @@ a {
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
     ),
-        /* bottom, image */ url('../img/gitpage.png');
+        /* bottom, image */ url('../img/gitpage.webp');
     background-size: cover;
     color: white;
 }
@@ -183,7 +183,7 @@ a {
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
     ),
-        /* bottom, image */ url('../img/anywallpaper.png');
+        /* bottom, image */ url('../img/anywallpaper.webp');
     background-size: cover;
     color: white;
 }
@@ -211,7 +211,7 @@ a {
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.6)
     ),
-        /* bottom, image */ url('../img/profilepic.png');
+        /* bottom, image */ url('../img/profilepic.webp');
     background-size: cover;
     color: white;
 }
